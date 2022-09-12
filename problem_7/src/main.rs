@@ -2,17 +2,14 @@ fn main() {
     let mut prime_numbers_found = 0;
     let mut number_to_check = 0;
 
-    loop {
+    while prime_numbers_found < 10001 {
+        number_to_check += 1;
         if is_prime_number(number_to_check) {
             prime_numbers_found += 1;
-            if prime_numbers_found == 10001 {
-                println!("{}", number_to_check);
-                break;
-            }
         }
-
-        number_to_check += 1;
     }
+
+    println!("{}", number_to_check);
 }
 
 fn is_prime_number(number: u32) -> bool {
