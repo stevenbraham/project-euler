@@ -18,7 +18,7 @@ fn is_palindrome_number(number: u32) -> bool {
 }
 
 #[test]
-fn test_is_prime_number() {
+fn test_is_palindrome_number() {
     assert!(is_palindrome_number(1));
     assert!(is_palindrome_number(101));
     assert!(!is_palindrome_number(9001));
