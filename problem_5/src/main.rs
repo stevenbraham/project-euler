@@ -1,10 +1,13 @@
+use rayon::prelude::*;
+use std::process;
+
 fn main() {
-    for n in 20..2000000000 {
+    (20..2000000000).into_par_iter().for_each(|n| {
         if is_divisible_by_1_to_20(n) {
             println!("{}", n);
-            break;
+            process::exit(0x0100);
         }
-    }
+    });
 }
 
 fn is_divisible_by_1_to_20(number: u64) -> bool {
