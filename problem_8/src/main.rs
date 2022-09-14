@@ -15,7 +15,7 @@ fn main() {
     for index in 12..(digits.len()) {
         let mut product: u64 = digits[index] as u64;
 
-        // pick privous 12 digits and multiply them
+        // pick previous 12 digits and multiply them
         for index_2 in (index - 12)..(index) {
             product *= digits[index_2] as u64;
         }
