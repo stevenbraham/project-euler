@@ -1,7 +1,10 @@
+use rayon::prelude::*;
+use std::process;
+
 fn main() {
-    for a in 1..1000 {
-        for b in 1..1000 {
-            for c in 1..1000 {
+    (1..1000).into_par_iter().for_each(|a| {
+        (1..1000).into_par_iter().for_each(|b| {
+            (1..1000).into_par_iter().for_each(|c| {
                 if
                 // requirement 1: a + b + c, should equal 1000
                 a + b + c == 1000 && 
@@ -12,9 +15,9 @@ fn main() {
                 {
                     println!("A: {} B: {} C: {}", a ,b,c);
                     println!("Product: {}", a * b * c);
-                    return;
+                    process::exit(0);
                 }
-            }
-        }
-    }
+            });
+        });
+    })  ;
 }
